@@ -9,7 +9,8 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "5.0.*"
+        "illuminate/support": "5.0.*",
+        "klsandbox/site-model": "~0.5"
     },
     "autoload": {
         "psr-0": {
