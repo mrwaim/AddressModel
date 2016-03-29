@@ -26,17 +26,17 @@ class Country extends Model
 
     public static function Malaysia()
     {
-        return Country::firstByAttributes(['name' => 'Malaysia', 'site_id' => Site::id()]);
+        return Country::where(['name' => 'Malaysia', 'site_id' => Site::id()])->first();
     }
 
     public static function Singapore()
     {
-        return Country::firstByAttributes(['name' => 'Singapore', 'site_id' => Site::id()]);
+        return Country::where(['name' => 'Singapore', 'site_id' => Site::id()])->first();
     }
 
     public static function Brunei()
     {
-        return Country::firstByAttributes(['name' => 'Brunei', 'site_id' => Site::id()]);
+        return Country::where(['name' => 'Brunei', 'site_id' => Site::id()])->first();
     }
 
 }
