@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\Klsandbox\AddressModel\Models\State whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Klsandbox\AddressModel\Models\State whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Klsandbox\AddressModel\Models\State whereName($value)
+ * @mixin \Eloquent
  */
 class State extends Model
 {

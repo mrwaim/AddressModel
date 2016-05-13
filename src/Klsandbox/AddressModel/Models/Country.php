@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\Klsandbox\AddressModel\Models\Country whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Klsandbox\AddressModel\Models\Country whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Klsandbox\AddressModel\Models\Country whereName($value)
+ * @mixin \Eloquent
  */
 class Country extends Model
 {
