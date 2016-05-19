@@ -23,5 +23,14 @@ use Illuminate\Database\Eloquent\Model;
  */
 class State extends Model
 {
-    //
+    public static function area($state){
+
+        $area = strtolower($state);
+
+        if(($area == 'sabah') || ($area == 'sarawak')){
+            return 'east';
+        }
+
+        return 'west';
+    }
 }
