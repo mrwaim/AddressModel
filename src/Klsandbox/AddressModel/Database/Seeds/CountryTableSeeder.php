@@ -2,14 +2,14 @@
 
 namespace Klsandbox\AddressModel\Database\Seeds;
 
-
 use Illuminate\Database\Seeder;
 use Klsandbox\AddressModel\Models\Country;
 use Klsandbox\SiteModel\Site;
 
-class CountryTableSeeder extends Seeder {
-
-    public function run() {
+class CountryTableSeeder extends Seeder
+{
+    public function run()
+    {
         if (Country::all()->count() > 0) {
             return;
         }
@@ -19,8 +19,9 @@ class CountryTableSeeder extends Seeder {
             $this->runForSite($site->id);
         }
     }
-    
-    public function runForSite($siteId) {
+
+    public function runForSite($siteId)
+    {
         Country::create(array(
             'name' => 'Malaysia',
         ));
@@ -33,5 +34,4 @@ class CountryTableSeeder extends Seeder {
             'name' => 'Brunei',
         ));
     }
-
 }

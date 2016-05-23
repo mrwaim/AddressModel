@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @property string $name
+ *
  * @method static \Illuminate\Database\Query\Builder|\Klsandbox\AddressModel\Models\State whereSiteId($value)
  * @method static \Illuminate\Database\Query\Builder|\Klsandbox\AddressModel\Models\State whereCountryId($value)
  * @method static \Illuminate\Database\Query\Builder|\Klsandbox\AddressModel\Models\State whereId($value)
@@ -23,11 +24,11 @@ use Illuminate\Database\Eloquent\Model;
  */
 class State extends Model
 {
-    public static function area($state){
-
+    public static function area($state)
+    {
         $area = strtolower($state);
 
-        if(($area == 'sabah') || ($area == 'sarawak')){
+        if (($area == 'sabah') || ($area == 'sarawak')) {
             return 'east';
         }
 

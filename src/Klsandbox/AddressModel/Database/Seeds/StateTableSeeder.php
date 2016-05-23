@@ -2,15 +2,15 @@
 
 namespace Klsandbox\AddressModel\Database\Seeds;
 
-
 use Illuminate\Database\Seeder;
 use Klsandbox\AddressModel\Models\Country;
 use Klsandbox\AddressModel\Models\State;
 use Klsandbox\SiteModel\Site;
 
-class StateTableSeeder extends Seeder {
-
-    public function run() {
+class StateTableSeeder extends Seeder
+{
+    public function run()
+    {
         if (State::all()->count() > 0) {
             return;
         }
@@ -20,8 +20,9 @@ class StateTableSeeder extends Seeder {
             $this->runForSite($site->id);
         }
     }
-    
-    public function runForSite($siteId) {
+
+    public function runForSite($siteId)
+    {
         State::create(array(
             'country_id' => Country::Malaysia()->id,
             'name' => 'Kuala Lumpur',
@@ -42,5 +43,4 @@ class StateTableSeeder extends Seeder {
             'name' => 'Singapore',
         ));
     }
-
 }

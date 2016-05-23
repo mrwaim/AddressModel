@@ -1,10 +1,11 @@
-<?php namespace Klsandbox\AddressModel;
+<?php
+
+namespace Klsandbox\AddressModel;
 
 use Illuminate\Support\ServiceProvider;
 
 class AddressModelServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -35,7 +36,7 @@ class AddressModelServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../../../database/migrations/' => database_path('/migrations')
+            __DIR__ . '/../../../database/migrations/' => database_path('/migrations'),
         ], 'migrations');
     }
 }
