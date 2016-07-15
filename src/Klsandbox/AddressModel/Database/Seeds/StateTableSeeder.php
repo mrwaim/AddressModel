@@ -9,14 +9,8 @@ use Klsandbox\SiteModel\Site;
 
 class StateTableSeeder extends Seeder
 {
-
-
     public function run()
     {
-        if (State::all()->count() > 0) {
-            return;
-        }
-
         foreach (Site::all() as $site) {
             Site::setSite($site);
             $this->runForSite($site->id);
@@ -25,11 +19,18 @@ class StateTableSeeder extends Seeder
 
     public function runForSite($siteId)
     {
+
         foreach ($this->getMalaysiaStates() as $state) {
-            State::create(array(
-                'country_id' => Country::Malaysia()->id,
-                'name' => $state,
-            ));
+            $stateIsExist = State::forSite()
+                ->where('name', $state)
+                ->count();
+
+            if (! $stateIsExist) {
+                State::create(array(
+                    'country_id' => Country::Malaysia()->id,
+                    'name' => $state,
+                ));
+            }
         }
 
         State::create(array(
