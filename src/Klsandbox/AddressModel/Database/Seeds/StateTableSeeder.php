@@ -33,15 +33,28 @@ class StateTableSeeder extends Seeder
             }
         }
 
-        State::create(array(
-            'country_id' => Country::Brunei()->id,
-            'name' => 'Brunei',
-        ));
+        $isBruneiExist = State::forSite()
+            ->where('name', 'Brunei')
+            ->count();
 
-        State::create(array(
-            'country_id' => Country::Singapore()->id,
-            'name' => 'Singapore',
-        ));
+
+        if (! $isBruneiExist) {
+            State::create(array(
+                'country_id' => Country::Brunei()->id,
+                'name' => 'Brunei',
+            ));
+        }
+
+        $isSingaporeExist = State::forSite()
+            ->where('name', 'Singapore')
+            ->count();
+
+        if (! $isSingaporeExist) {
+            State::create(array(
+                'country_id' => Country::Singapore()->id,
+                'name' => 'Singapore',
+            ));
+        }
     }
 
     private function getMalaysiaStates()
