@@ -3,6 +3,7 @@
 namespace Klsandbox\AddressModel\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Klsandbox\SiteModel\SiteExtensions;
 
 /**
  * Klsandbox\AddressModel\Models\State
@@ -23,6 +24,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class State extends Model
 {
+    use SiteExtensions;
+
     public static function area($state)
     {
         $area = strtolower($state);
