@@ -5,24 +5,13 @@ namespace Klsandbox\AddressModel\Database\Seeds;
 use Illuminate\Database\Seeder;
 use Klsandbox\AddressModel\Models\Country;
 use Klsandbox\AddressModel\Models\State;
-use Klsandbox\SiteModel\Site;
 
 class StateTableSeeder extends Seeder
 {
     public function run()
     {
-        foreach (Site::all() as $site) {
-            Site::setSite($site);
-            $this->runForSite($site->id);
-        }
-    }
-
-    public function runForSite($siteId)
-    {
-
         foreach ($this->getMalaysiaStates() as $state) {
-            $stateIsExist = State::forSite()
-                ->where('name', $state)
+            $stateIsExist = State::where('name', $state)
                 ->count();
 
             if (! $stateIsExist) {
@@ -33,8 +22,7 @@ class StateTableSeeder extends Seeder
             }
         }
 
-        $isBruneiExist = State::forSite()
-            ->where('name', 'Brunei')
+        $isBruneiExist = State::where('name', 'Brunei')
             ->count();
 
 
@@ -45,8 +33,7 @@ class StateTableSeeder extends Seeder
             ));
         }
 
-        $isSingaporeExist = State::forSite()
-            ->where('name', 'Singapore')
+        $isSingaporeExist = State::where('name', 'Singapore')
             ->count();
 
         if (! $isSingaporeExist) {
