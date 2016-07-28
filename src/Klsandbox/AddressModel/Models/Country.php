@@ -2,7 +2,6 @@
 
 namespace Klsandbox\AddressModel\Models;
 
-use Klsandbox\SiteModel\Site;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -22,20 +21,18 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Country extends Model
 {
-    use \Klsandbox\SiteModel\SiteExtensions;
-
     public static function Malaysia()
     {
-        return self::where(['name' => 'Malaysia', 'site_id' => Site::id()])->first();
+        return self::where(['name' => 'Malaysia'])->first();
     }
 
     public static function Singapore()
     {
-        return self::where(['name' => 'Singapore', 'site_id' => Site::id()])->first();
+        return self::where(['name' => 'Singapore'])->first();
     }
 
     public static function Brunei()
     {
-        return self::where(['name' => 'Brunei', 'site_id' => Site::id()])->first();
+        return self::where(['name' => 'Brunei'])->first();
     }
 }

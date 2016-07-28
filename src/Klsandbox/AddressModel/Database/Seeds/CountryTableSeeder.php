@@ -4,7 +4,6 @@ namespace Klsandbox\AddressModel\Database\Seeds;
 
 use Illuminate\Database\Seeder;
 use Klsandbox\AddressModel\Models\Country;
-use Klsandbox\SiteModel\Site;
 
 class CountryTableSeeder extends Seeder
 {
@@ -14,14 +13,6 @@ class CountryTableSeeder extends Seeder
             return;
         }
 
-        foreach (Site::all() as $site) {
-            Site::setSite($site);
-            $this->runForSite($site->id);
-        }
-    }
-
-    public function runForSite($siteId)
-    {
         Country::create(array(
             'name' => 'Malaysia',
         ));
