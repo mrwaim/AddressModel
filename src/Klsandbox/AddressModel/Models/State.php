@@ -35,4 +35,16 @@ class State extends Model
 
         return 'west';
     }
+
+    public static function getAreaByStateId($stateId)
+    {
+        $stateModel = new self();
+        $state = $stateModel->find($stateId);
+
+        if ($state) {
+            return self::area($state->name);
+        }
+
+        return 'west';
+    }
 }
