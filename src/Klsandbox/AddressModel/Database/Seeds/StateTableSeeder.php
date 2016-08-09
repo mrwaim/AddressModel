@@ -14,7 +14,7 @@ class StateTableSeeder extends Seeder
             $stateIsExist = State::where('name', $state)
                 ->count();
 
-            if (! $stateIsExist) {
+            if (!$stateIsExist) {
                 State::create(array(
                     'country_id' => Country::Malaysia()->id,
                     'name' => $state,
@@ -25,8 +25,7 @@ class StateTableSeeder extends Seeder
         $isBruneiExist = State::where('name', 'Brunei')
             ->count();
 
-
-        if (! $isBruneiExist) {
+        if (!$isBruneiExist) {
             State::create(array(
                 'country_id' => Country::Brunei()->id,
                 'name' => 'Brunei',
@@ -36,7 +35,7 @@ class StateTableSeeder extends Seeder
         $isSingaporeExist = State::where('name', 'Singapore')
             ->count();
 
-        if (! $isSingaporeExist) {
+        if (!$isSingaporeExist) {
             State::create(array(
                 'country_id' => Country::Singapore()->id,
                 'name' => 'Singapore',
@@ -46,9 +45,9 @@ class StateTableSeeder extends Seeder
 
     private function getMalaysiaStates()
     {
-         return  [
+        return  [
             'Selangor', 'Kuala Lumpur', 'Sarawak', 'Johor', 'Penang', 'Sabah', 'Perak', 'Pahang', 'Negeri Sembilan',
-            'Kedah', 'Malacca', 'Terengganu', 'Kelantan', 'Perlis', 'Labuan'
+            'Kedah', 'Malacca', 'Terengganu', 'Kelantan', 'Perlis', 'Labuan',
          ];
     }
 }
