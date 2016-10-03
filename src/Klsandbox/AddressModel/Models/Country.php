@@ -21,6 +21,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Country extends Model
 {
+    protected $fillable = ['name'];
+
     public static function Malaysia()
     {
         return self::where(['name' => 'Malaysia'])->first();
